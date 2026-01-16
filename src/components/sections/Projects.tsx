@@ -21,12 +21,15 @@ const Projects = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
     },
-  };
+  } as const;
 
   return (
     <section id="projects" className="py-24 px-4 relative bg-[#0a0a0a]">

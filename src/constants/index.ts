@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 2,
-    title: "ERP Ferretería Ferrex",
+    title: "ERP Ferretería",
     description: "Sistema administrativo para ferretería naval con gestión de inventarios complejos y facturación.",
     tags: ["PHP", "Laravel", "PostgreSQL", "MVC", "Tailwind", "Docker"],
     github: "https://github.com/TomcoDev/ERP-Completa",

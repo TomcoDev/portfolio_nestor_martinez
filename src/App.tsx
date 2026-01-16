@@ -24,9 +24,9 @@ function App() {
       */}
       <Particles
         className="fixed inset-0 -z-10"
-        quantity={150}      // Cantidad de puntos (puedes subirlo a 200 si quieres más densidad)
-        staticity={30}     // Qué tanto se mueven solos
-        ease={50}          // Suavidad del movimiento al seguir el mouse
+        particleCount={150}      // Cantidad de puntos (puedes subirlo a 200 si quieres más densidad)
+        speed={30}     // Qué tanto se mueven solos
+        particleSpread={50}          // Suavidad del movimiento al seguir el mouse
       />
 
       {/* 1. Navegación Superior Fija */}
