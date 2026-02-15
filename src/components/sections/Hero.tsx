@@ -79,7 +79,7 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Estudiante en la <span className="text-zinc-200">Universidad Iberoamericana</span> y Developer en <span className="text-zinc-200">Factupar</span>. Especializado en ecosistemas digitales con <span className="text-zinc-100 font-medium">PHP</span> y <span className="text-zinc-100 font-medium">React</span>.
+          Estudiante en la <span className="text-zinc-200">Universidad Iberoamericana</span> y Developer en <span className="text-zinc-200">Onnix</span>. Especializado en ecosistemas digitales con <span className="text-zinc-100 font-medium">PHP Framework(Laravel)</span> y <span className="text-zinc-100 font-medium">React</span>.
         </motion.p>
 
         {/* BOTONES (Contraste Máximo) */}

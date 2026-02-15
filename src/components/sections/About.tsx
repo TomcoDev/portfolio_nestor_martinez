@@ -50,7 +50,7 @@ const About = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-2 text-zinc-100">Experiencia Actual</h3>
                   <p className="text-zinc-500 leading-relaxed font-light">
-                    Actualmente me desempeño como <strong className="text-zinc-200">Developer Full Stack Junior</strong> en <span className="text-zinc-100">Factupar</span>, gestionando módulos financieros complejos con <span className="font-mono text-xs">MVC PHP, MySQL y AJAX</span>.
+                    Actualmente me desempeño como <strong className="text-zinc-200">Developer Full Stack</strong> en <span className="text-zinc-100">Onnix</span>, gestionando módulos financieros con <span className="font-mono text-xs">MVC, PHP, Framework Laravel, Pgsql, MySQL, jQuery y AJAX</span>.
                   </p>
                 </div>
               </div>
