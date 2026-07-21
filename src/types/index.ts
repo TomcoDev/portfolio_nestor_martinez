@@ -29,3 +29,13 @@ export interface NavLink {
   name: string;
   href: string;
 }
+
+export interface Service {
+  id: number;
+  title: string;
+  tagline: string;
+  description: string;
+  features: string[];
+  price: string;
+  icon: ElementType; // Componente de Lucide
+}

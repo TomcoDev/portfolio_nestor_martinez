@@ -4,6 +4,7 @@ import Dock from './components/layout/Dock';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
+import Services from './components/sections/Services';
 import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 
@@ -44,6 +45,9 @@ function App() {
 
         {/* Quién eres y qué haces */}
         <About />
+
+        {/* Servicios que ofreces (Tomcodev) */}
+        <Services />
 
         {/* Tus trabajos (ERP, GlowManager, etc.) */}
         <Projects />

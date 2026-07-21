@@ -32,10 +32,13 @@ import {
   Database, 
   Layout, 
   Settings,
+  Bug,
+  Search,
+  Globe,
   // Mantenemos estos de Lucide para la sección About y Redes
 } from 'lucide-react';
 
-import type { Project, SocialLink, SkillGroup, NavLink } from '../types';
+import type { Project, SocialLink, SkillGroup, NavLink, Service } from '../types';
 
 /**
  * DATOS DEL NAVBAR
@@ -43,8 +46,42 @@ import type { Project, SocialLink, SkillGroup, NavLink } from '../types';
 export const NAV_LINKS: NavLink[] = [
   { name: 'Inicio', href: '#home' },
   { name: 'Sobre mí', href: '#about' },
+  { name: 'Servicios', href: '#services' },
   { name: 'Proyectos', href: '#projects' },
   { name: 'Contacto', href: '#contact' },
+];
+
+/**
+ * SERVICIOS (Tomcodev) — lo que un cliente puede contratar
+ */
+export const SERVICES: Service[] = [
+  {
+    id: 1,
+    title: 'Arreglo de bugs',
+    tagline: 'Encuentro y arreglo',
+    description: 'Tu web o sistema da un error, algo dejó de funcionar o va lento. Lo diagnostico, lo arreglo y te explico qué pasó.',
+    features: ['Errores de código, WordPress y formularios', 'Diagnóstico + solución verificada', 'Entrega rápida, incluso en 24h'],
+    price: 'Desde $15',
+    icon: Bug,
+  },
+  {
+    id: 2,
+    title: 'Auditoría SEO',
+    tagline: 'Aparece en Google',
+    description: 'Analizo por qué tu web no aparece o no recibe visitas, con un informe claro y un plan de acción priorizado.',
+    features: ['Velocidad, indexación y meta tags', 'Checklist con semáforo de prioridades', 'Las 3 acciones más importantes'],
+    price: 'Desde $30',
+    icon: Search,
+  },
+  {
+    id: 3,
+    title: 'Webs y sistemas',
+    tagline: 'Tu negocio online',
+    description: 'Landing pages y sistemas a medida: rápidos, modernos y perfectos en el móvil. Listos para conseguir clientes.',
+    features: ['Diseño responsive orientado a vender', 'React, Laravel o el stack ideal', 'Optimizado en velocidad y SEO base'],
+    price: 'Desde $80',
+    icon: Globe,
+  },
 ];
 
 /**
@@ -107,7 +144,7 @@ export const PROJECTS: Project[] = [
     title: "E-commerce Variedad Universal",
     description: "Plataforma de ventas online con panel administrativo CRM y tableros de control KPI para el negocio.",
     tags: ["PHP", "PostgreSQL", "JavaScript", "CSS"],
-    github: "https://tomcodevportfolio.netlify.app",
+    github: "https://github.com/TomcoDev/e-commerce-variedad-universal",
   },
   {
     id: 4,
