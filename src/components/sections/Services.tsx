@@ -101,7 +101,10 @@ const Services = () => {
 
                     {/* Precio + CTA */}
                     <div className="pt-6 border-t border-zinc-800/30 flex items-center justify-between gap-4">
-                      <span className="text-lg font-bold text-zinc-100 font-mono">{service.price}</span>
+                      <span className="text-lg font-bold text-zinc-100 font-mono">
+                        <span className="text-xs font-normal text-zinc-500 mr-1">{t.services.from}</span>
+                        {service.price}
+                      </span>
                       <a
                         href={buildWhatsAppUrl(service.title)}
                         target="_blank"

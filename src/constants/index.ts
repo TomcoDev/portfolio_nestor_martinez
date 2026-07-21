@@ -68,7 +68,7 @@ export const SERVICES: Service[] = [
     description_en: 'Your website or system throws an error, something stopped working or runs slow. I diagnose it, fix it and explain what happened.',
     features: ['Errores de código, WordPress y formularios', 'Diagnóstico + solución verificada', 'Entrega rápida, incluso en 24h'],
     features_en: ['Code, WordPress and form errors', 'Diagnosis + verified fix', 'Fast delivery, even in 24h'],
-    price: 'Desde $15',
+    price: '$15',
     icon: Bug,
   },
   {
@@ -81,7 +81,7 @@ export const SERVICES: Service[] = [
     description_en: 'I analyze why your site does not rank or get visits, with a clear report and a prioritized action plan.',
     features: ['Velocidad, indexación y meta tags', 'Checklist con semáforo de prioridades', 'Las 3 acciones más importantes'],
     features_en: ['Speed, indexing and meta tags', 'Traffic-light priority checklist', 'The 3 most important actions'],
-    price: 'Desde $30',
+    price: '$30',
     icon: Search,
   },
   {
@@ -94,7 +94,7 @@ export const SERVICES: Service[] = [
     description_en: 'Custom landing pages and websites: fast, modern and perfect on mobile. Ready to bring you clients.',
     features: ['Diseño responsive orientado a vender', 'React, Laravel o el stack ideal', 'Optimizado en velocidad y SEO base'],
     features_en: ['Responsive, conversion-focused design', 'React, Laravel or the ideal stack', 'Speed optimized + basic SEO'],
-    price: 'Desde $80',
+    price: '$80',
     icon: Globe,
   },
   {
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
     description_en: 'Systems to run your business: inventory, sales, clients and billing, with clear control dashboards.',
     features: ['Inventario, ventas y CRM', 'Reportes y tableros KPI', 'Roles y permisos de usuario'],
     features_en: ['Inventory, sales and CRM', 'Reports and KPI dashboards', 'User roles and permissions'],
-    price: 'Desde $250',
+    price: '$250',
     icon: LayoutDashboard,
   },
   {
@@ -120,7 +120,7 @@ export const SERVICES: Service[] = [
     description_en: 'I connect your website or app with external services: payment gateways, WhatsApp, e-invoicing and more.',
     features: ['APIs REST a medida', 'Pasarelas de pago y WhatsApp', 'Integración entre plataformas'],
     features_en: ['Custom REST APIs', 'Payment gateways and WhatsApp', 'Integration between platforms'],
-    price: 'Desde $60',
+    price: '$60',
     icon: Webhook,
   },
   {
@@ -133,7 +133,7 @@ export const SERVICES: Service[] = [
     description_en: 'Chatbots and automations that answer your clients and do the repetitive work for you, powered by AI.',
     features: ['Chatbots para atención al cliente', 'Automatización de tareas repetitivas', 'Integración con IA (Gemini / APIs)'],
     features_en: ['Customer-support chatbots', 'Automation of repetitive tasks', 'AI integration (Gemini / APIs)'],
-    price: 'Desde $80',
+    price: '$80',
     icon: Bot,
   },
 ];

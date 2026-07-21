@@ -81,6 +81,7 @@ export const translations = {
       title2: 'Tomcodev',
       subtitle: '¿Necesitas ayuda con tu proyecto? Esto es lo que puedo hacer por ti. Trabajo remoto y entregas claras.',
       consult: 'Consultar',
+      from: 'Desde',
     },
     projects: {
       title1: 'Proyectos',
@@ -188,6 +189,7 @@ export const translations = {
       title2: 'Services',
       subtitle: 'Need help with your project? This is what I can do for you. Remote work and clear deliverables.',
       consult: 'Inquire',
+      from: 'From',
     },
     projects: {
       title1: 'Selected',
