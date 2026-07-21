@@ -4,6 +4,15 @@ import { Check, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../../constants';
 import { SpotlightCard } from '../ui/SpotlightCard';
 
+// Numero de WhatsApp de Nestor (mismo que en Contact)
+const WHATSAPP_PHONE = '595991682966';
+
+// Arma el link de WhatsApp con un mensaje pre-escrito segun el servicio
+const buildWhatsAppUrl = (serviceTitle: string) => {
+  const text = `Hola Néstor, me interesa tu servicio de "${serviceTitle}". ¿Podemos hablar sobre esto?`;
+  return `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(text)}`;
+};
+
 const Services = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,10 +94,12 @@ const Services = () => {
                     <div className="pt-6 border-t border-zinc-800/30 flex items-center justify-between gap-4">
                       <span className="text-lg font-bold text-zinc-100 font-mono">{service.price}</span>
                       <a
-                        href="#contact"
+                        href={buildWhatsAppUrl(service.title)}
+                        target="_blank"
+                        rel="noreferrer"
                         className="flex items-center gap-2 px-5 py-2.5 bg-zinc-100 text-black hover:bg-white rounded-xl transition-all text-[11px] font-bold uppercase tracking-widest shadow-lg"
                       >
-                        Contratar <ArrowRight size={14} />
+                        Consultar <ArrowRight size={14} />
                       </a>
                     </div>
                   </div>
