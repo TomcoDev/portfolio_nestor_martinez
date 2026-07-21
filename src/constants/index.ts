@@ -35,6 +35,9 @@ import {
   Bug,
   Search,
   Globe,
+  LayoutDashboard,
+  Webhook,
+  Bot,
   // Mantenemos estos de Lucide para la sección About y Redes
 } from 'lucide-react';
 
@@ -75,12 +78,39 @@ export const SERVICES: Service[] = [
   },
   {
     id: 3,
-    title: 'Webs y sistemas',
+    title: 'Páginas web',
     tagline: 'Tu negocio online',
-    description: 'Landing pages y sistemas a medida: rápidos, modernos y perfectos en el móvil. Listos para conseguir clientes.',
+    description: 'Landing pages y webs a medida: rápidas, modernas y perfectas en el móvil. Listas para conseguir clientes.',
     features: ['Diseño responsive orientado a vender', 'React, Laravel o el stack ideal', 'Optimizado en velocidad y SEO base'],
     price: 'Desde $80',
     icon: Globe,
+  },
+  {
+    id: 4,
+    title: 'Sistemas de gestión',
+    tagline: 'ERP y paneles a medida',
+    description: 'Sistemas para administrar tu negocio: inventario, ventas, clientes y facturación, con tableros de control claros.',
+    features: ['Inventario, ventas y CRM', 'Reportes y tableros KPI', 'Roles y permisos de usuario'],
+    price: 'Desde $250',
+    icon: LayoutDashboard,
+  },
+  {
+    id: 5,
+    title: 'APIs e integraciones',
+    tagline: 'Conecto tus sistemas',
+    description: 'Conecto tu web o app con servicios externos: pasarelas de pago, WhatsApp, facturación electrónica y más.',
+    features: ['APIs REST a medida', 'Pasarelas de pago y WhatsApp', 'Integración entre plataformas'],
+    price: 'Desde $60',
+    icon: Webhook,
+  },
+  {
+    id: 6,
+    title: 'Automatización con IA',
+    tagline: 'Ahorra tiempo con IA',
+    description: 'Chatbots y automatizaciones que responden a tus clientes y hacen el trabajo repetitivo por ti, con IA integrada.',
+    features: ['Chatbots para atención al cliente', 'Automatización de tareas repetitivas', 'Integración con IA (Gemini / APIs)'],
+    price: 'Desde $80',
+    icon: Bot,
   },
 ];
 

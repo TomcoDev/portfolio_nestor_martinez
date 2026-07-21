@@ -47,7 +47,7 @@ const Services = () => {
           </h2>
           <div className="h-1 w-20 bg-zinc-800 mx-auto rounded-full mb-6" />
           <p className="text-zinc-500 text-lg font-light max-w-xl mx-auto">
-            ¿Necesitas ayuda con tu proyecto? Esto es lo que puedo hacer por ti — trabajo remoto y entregas claras.
+            ¿Necesitas ayuda con tu proyecto? Esto es lo que puedo hacer por ti. Trabajo remoto y entregas claras.
           </p>
         </motion.div>
 
