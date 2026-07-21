@@ -34,21 +34,10 @@ const Footer = () => {
         {/* Línea divisoria interna muy sutil */}
         <div className="h-[1px] w-full bg-zinc-900 my-12" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Copyright & Stack Info */}
+        <div className="flex justify-center md:justify-start">
+          {/* Copyright */}
           <div className="text-zinc-600 text-[10px] font-mono uppercase tracking-[0.15em]">
-            © {new Date().getFullYear()} — STACK: <span className="text-zinc-400">REACT / GSAP / OGL</span>
-          </div>
-
-          {/* Status Indicator: Detalle de "Seniority" */}
-          <div className="flex items-center gap-3 px-4 py-2 bg-zinc-900/50 border border-zinc-800/50 rounded-full">
-            <div className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-zinc-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-zinc-500"></span>
-            </div>
-            <span className="text-zinc-500 text-[10px] font-mono uppercase tracking-widest">
-              SISTEMA OPERATIVO
-            </span>
+            © {new Date().getFullYear()} <span className="text-zinc-400">Néstor Martínez</span>
           </div>
         </div>
       </div>

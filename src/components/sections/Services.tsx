@@ -62,13 +62,16 @@ const Services = () => {
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div key={service.id} variants={itemVariants} whileHover={{ y: -5 }}>
+              <motion.div key={service.id} variants={itemVariants} whileHover={{ y: -5 }} className="group h-full">
                 <SpotlightCard className="h-full flex flex-col bg-[#0d0d0d] border-zinc-800/50 hover:border-zinc-600 transition-colors duration-500 p-8">
                   <div className="relative z-10 flex flex-col h-full">
 
-                    {/* Icono */}
-                    <div className="w-12 h-12 rounded-xl bg-zinc-900/80 border border-zinc-800 flex items-center justify-center mb-6">
-                      <Icon size={22} className="text-zinc-300" strokeWidth={1.5} />
+                    {/* Icono con animacion en hover */}
+                    <div className="w-12 h-12 rounded-xl bg-zinc-900/80 border border-zinc-800 flex items-center justify-center mb-6
+                                    transition-all duration-300 ease-out
+                                    group-hover:scale-110 group-hover:-rotate-6 group-hover:border-zinc-500 group-hover:bg-zinc-800/80
+                                    motion-reduce:transition-none motion-reduce:group-hover:scale-100 motion-reduce:group-hover:rotate-0">
+                      <Icon size={22} className="text-zinc-300 transition-colors duration-300 group-hover:text-white" strokeWidth={1.5} />
                     </div>
 
                     {/* Encabezado */}

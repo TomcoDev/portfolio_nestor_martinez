@@ -2,6 +2,7 @@
 import Navbar from './components/layout/Navbar';
 import Dock from './components/layout/Dock';
 import Footer from './components/layout/Footer';
+import WhatsAppFab from './components/layout/WhatsAppFab';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Services from './components/sections/Services';
@@ -61,6 +62,9 @@ function App() {
 
       {/* 4. Barra de Redes Sociales Flotante (Dock) */}
       <Dock />
+
+      {/* 5. Boton flotante de WhatsApp (visible en toda la web) */}
+      <WhatsAppFab />
     </div>
   );
 }
