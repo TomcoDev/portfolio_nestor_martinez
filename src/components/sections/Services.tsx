@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../../constants';
 import { SpotlightCard } from '../ui/SpotlightCard';
+import { useLang } from '../../i18n';
 
 // Numero de WhatsApp de Nestor (mismo que en Contact)
 const WHATSAPP_PHONE = '595991682966';
@@ -14,6 +15,7 @@ const buildWhatsAppUrl = (serviceTitle: string) => {
 };
 
 const Services = () => {
+  const { t, lang } = useLang();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,11 +45,11 @@ const Services = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-100">
-            Servicios <span className="text-zinc-500">Tomcodev</span>
+            {t.services.title1} <span className="text-zinc-500">{t.services.title2}</span>
           </h2>
           <div className="h-1 w-20 bg-zinc-800 mx-auto rounded-full mb-6" />
           <p className="text-zinc-500 text-lg font-light max-w-xl mx-auto">
-            ¿Necesitas ayuda con tu proyecto? Esto es lo que puedo hacer por ti. Trabajo remoto y entregas claras.
+            {t.services.subtitle}
           </p>
         </motion.div>
 
@@ -61,6 +63,10 @@ const Services = () => {
         >
           {SERVICES.map((service) => {
             const Icon = service.icon;
+            const title = lang === 'en' ? service.title_en : service.title;
+            const tagline = lang === 'en' ? service.tagline_en : service.tagline;
+            const description = lang === 'en' ? service.description_en : service.description;
+            const features = lang === 'en' ? service.features_en : service.features;
             return (
               <motion.div key={service.id} variants={itemVariants} whileHover={{ y: -5 }} className="group h-full">
                 <SpotlightCard className="h-full flex flex-col bg-[#0d0d0d] border-zinc-800/50 hover:border-zinc-600 transition-colors duration-500 p-8">
@@ -76,16 +82,16 @@ const Services = () => {
 
                     {/* Encabezado */}
                     <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 mb-2">
-                      {service.tagline}
+                      {tagline}
                     </span>
-                    <h3 className="text-2xl font-bold text-zinc-100 mb-3">{service.title}</h3>
+                    <h3 className="text-2xl font-bold text-zinc-100 mb-3">{title}</h3>
                     <p className="text-zinc-500 text-sm leading-relaxed font-light mb-6">
-                      {service.description}
+                      {description}
                     </p>
 
                     {/* Lista de features */}
                     <ul className="space-y-3 mb-8 flex-grow">
-                      {service.features.map((feature) => (
+                      {features.map((feature) => (
                         <li key={feature} className="flex items-start gap-3 text-sm text-zinc-400 font-light">
                           <Check size={16} className="text-zinc-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                           <span>{feature}</span>
@@ -102,7 +108,7 @@ const Services = () => {
                         rel="noreferrer"
                         className="flex items-center gap-2 px-5 py-2.5 bg-zinc-100 text-black hover:bg-white rounded-xl transition-all text-[11px] font-bold uppercase tracking-widest shadow-lg"
                       >
-                        Consultar <ArrowRight size={14} />
+                        {t.services.consult} <ArrowRight size={14} />
                       </a>
                     </div>
                   </div>

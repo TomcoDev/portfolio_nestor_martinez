@@ -5,6 +5,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
+  description_en?: string;
   tags: string[];
   link?: string;
   github?: string;
@@ -25,17 +26,22 @@ export interface SkillGroup {
   skills: string[];
 }
 
-export interface NavLink {
-  name: string;
-  href: string;
-}
-
 export interface Service {
   id: number;
   title: string;
+  title_en: string;
   tagline: string;
+  tagline_en: string;
   description: string;
+  description_en: string;
   features: string[];
+  features_en: string[];
   price: string;
   icon: ElementType; // Componente de Lucide
+}
+
+export interface NavLink {
+  name: string;
+  href: string;
+  key: 'inicio' | 'sobreMi' | 'servicios' | 'proyectos' | 'contacto';
 }

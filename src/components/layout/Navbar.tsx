@@ -3,11 +3,14 @@ import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { useScroll } from '../../hooks/useScroll';
 import { NAV_LINKS } from '../../constants';
+import { useLang } from '../../i18n';
+import LangToggle from '../ui/LangToggle';
 import Sidebar from './Sidebar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isScrolled = useScroll(20);
+  const { t } = useLang();
 
   return (
     <>
@@ -32,28 +35,31 @@ const Navbar = () => {
               </a>
             </div>
 
-            {/* Desktop Links: Minimalismo Industrial */}
-            <div className="hidden md:block">
-              <div className="flex items-center space-x-10">
+            {/* Lado derecho: links + idioma + hamburguesa */}
+            <div className="flex items-center gap-5 md:gap-8">
+              {/* Desktop Links: Minimalismo Industrial */}
+              <div className="hidden md:flex items-center space-x-10">
                 {NAV_LINKS.map((link) => (
                   <a
-                    key={link.name}
+                    key={link.key}
                     href={link.href}
                     className="text-[11px] font-mono uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-100 transition-all duration-300 relative group"
                   >
-                    {link.name}
+                    {t.nav[link.key]}
                     {/* Línea inferior sutil al hacer hover */}
                     <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-zinc-100 transition-all duration-300 group-hover:w-full" />
                   </a>
                 ))}
               </div>
-            </div>
 
-            {/* Botón Hamburguesa (Mobile) - Estilo Zinc */}
-            <div className="md:hidden">
+              {/* Cambio de idioma (siempre visible) */}
+              <LangToggle />
+
+              {/* Botón Hamburguesa (Mobile) - Estilo Zinc */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="p-2 text-zinc-400 hover:text-zinc-100 transition-colors"
+                className="md:hidden p-2 text-zinc-400 hover:text-zinc-100 transition-colors"
+                aria-label="Abrir menú"
               >
                 <Menu size={24} strokeWidth={1.5} />
               </button>

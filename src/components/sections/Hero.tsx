@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import Particles from '../ui/Particles';
 import TextType from '../ui/TextType';
+import { useLang } from '../../i18n';
 
 const Hero = () => {
+  const { t } = useLang();
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-[#0a0a0a]">
       
@@ -47,12 +49,8 @@ const Hero = () => {
         <div className="h-8 mb-4 flex items-center justify-center">
           <TextType
             as="h2"
-            text={[
-              "< Desarrollador Full Stack />",
-              "< Stack React | Node.js | Express | Next.js | C# | .NET | Python | PHP | Laravel />",
-              "< Estudiante de Sistemas />",
-              "< Freelance Developer />"
-            ]}
+            key={t.hero.roles[0]}
+            text={[...t.hero.roles]}
             typingSpeed={70}
             deletingSpeed={40}
             pauseDuration={2000}
@@ -79,7 +77,7 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Estudiante en la <span className="text-zinc-200">Universidad Iberoamericana</span> y Developer en <span className="text-zinc-200">Onnix</span>. Especializado en ecosistemas digitales con <span className="text-zinc-100 font-medium">PHP Framework(Laravel)</span> y <span className="text-zinc-100 font-medium">React</span>.
+          {t.hero.desc}
         </motion.p>
 
         {/* BOTONES (Contraste Máximo) */}
@@ -91,12 +89,12 @@ const Hero = () => {
         >
           <a href="#projects">
             <Button className="w-full sm:w-auto px-12 py-4 bg-zinc-100 text-black hover:bg-white transition-all font-bold uppercase tracking-widest text-xs">
-              Ver Proyectos
+              {t.hero.cta1}
             </Button>
           </a>
           <a href="#contact">
             <Button variant="outline" className="w-full sm:w-auto px-12 py-4 border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-500 transition-all font-bold uppercase tracking-widest text-xs">
-              Hablemos
+              {t.hero.cta2}
             </Button>
           </a>
         </motion.div>

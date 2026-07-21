@@ -2,8 +2,12 @@
 import { motion } from 'framer-motion';
 import { SpotlightCard } from '../ui/SpotlightCard';
 import { Code2, BookOpen, Briefcase, Rocket } from 'lucide-react';
+import { useLang } from '../../i18n';
+
+const CARD_ICONS = [Briefcase, BookOpen, Code2, Rocket];
 
 const About = () => {
+  const { t } = useLang();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,85 +32,36 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 text-zinc-100">
-            Mi <span className="text-zinc-500">Trayectoria</span>
+            {t.about.title1} <span className="text-zinc-500">{t.about.title2}</span>
           </h2>
           <div className="h-1 w-16 bg-zinc-800 mx-auto rounded-full" />
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {/* Card: Experiencia */}
-          <motion.div variants={itemVariants}>
-            <SpotlightCard className="h-full border-zinc-800/50 bg-zinc-900/20 group">
-              <div className="flex items-start gap-5">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors">
-                  <Briefcase size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100">Experiencia Actual</h3>
-                  <p className="text-zinc-500 leading-relaxed font-light">
-                    Actualmente me desempeño como <strong className="text-zinc-200">Developer Full Stack</strong> en <span className="text-zinc-100">Onnix</span>, gestionando módulos financieros con <span className="font-mono text-xs">MVC, PHP, Framework Laravel, Pgsql, MySQL, jQuery y AJAX</span>.
-                  </p>
-                </div>
-              </div>
-            </SpotlightCard>
-          </motion.div>
-
-          {/* Card: Educación */}
-          <motion.div variants={itemVariants}>
-            <SpotlightCard className="h-full border-zinc-800/50 bg-zinc-900/20 group">
-              <div className="flex items-start gap-5">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors">
-                  <BookOpen size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100">Educación</h3>
-                  <p className="text-zinc-500 leading-relaxed font-light">
-                    Estudiante de <strong className="text-zinc-200">Análisis de Sistemas</strong> en la <span className="text-zinc-100">Universidad Iberoamericana</span>, enfocado en arquitectura de software y metodologías ágiles.
-                  </p>
-                </div>
-              </div>
-            </SpotlightCard>
-          </motion.div>
-
-          {/* Card: Stack */}
-          <motion.div variants={itemVariants}>
-            <SpotlightCard className="h-full border-zinc-800/50 bg-zinc-900/20 group">
-              <div className="flex items-start gap-5">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors">
-                  <Code2 size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100">Stack Tecnológico</h3>
-                  <p className="text-zinc-500 leading-relaxed font-light">
-                    Dominio de <span className="text-zinc-200">PHP (Laravel), JavaScript (React, jQuery)</span> y <span className="text-zinc-200">MySQL</span>. Experiencia en despliegues con WinSCP y Git.
-                  </p>
-                </div>
-              </div>
-            </SpotlightCard>
-          </motion.div>
-
-          {/* Card: Objetivos */}
-          <motion.div variants={itemVariants}>
-            <SpotlightCard className="h-full border-zinc-800/50 bg-zinc-900/20 group">
-              <div className="flex items-start gap-5">
-                <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors">
-                  <Rocket size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-zinc-100">Objetivos</h3>
-                  <p className="text-zinc-500 leading-relaxed font-light">
-                    Mi meta es evolucionar a <strong className="text-zinc-200">Full Stack Master</strong>, migrando mi stack hacia el ecosistema moderno de <span className="text-zinc-100">React y Node.js</span>.
-                  </p>
-                </div>
-              </div>
-            </SpotlightCard>
-          </motion.div>
+          {t.about.cards.map((card, index) => {
+            const Icon = CARD_ICONS[index];
+            return (
+              <motion.div key={index} variants={itemVariants}>
+                <SpotlightCard className="h-full border-zinc-800/50 bg-zinc-900/20 group">
+                  <div className="flex items-start gap-5">
+                    <div className="p-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 group-hover:text-white transition-colors">
+                      <Icon size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2 text-zinc-100">{card.title}</h3>
+                      <p className="text-zinc-500 leading-relaxed font-light">{card.body}</p>
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

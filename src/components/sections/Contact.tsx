@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { MessageCircle } from 'lucide-react';
+import { useLang } from '../../i18n';
 
 const Contact = () => {
+  const { t } = useLang();
   const [formData, setFormData] = useState({ name: '', message: '' });
 
   const handleWhatsAppSend = (e: React.FormEvent) => {
@@ -28,11 +30,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-100">
-            ¿Hablamos <span className="text-zinc-500">ahora?</span>
+            {t.contact.title1} <span className="text-zinc-500">{t.contact.title2}</span>
           </h2>
           <div className="h-1 w-12 bg-zinc-800 mx-auto rounded-full mb-6" />
           <p className="text-zinc-500 text-lg font-light max-w-md mx-auto">
-            Completa el formulario y te responderé directamente por <span className="text-zinc-200">WhatsApp</span>.
+            {t.contact.subtitlePre}<span className="text-zinc-200">{t.contact.subtitleStrong}</span>.
           </p>
         </motion.div>
 
@@ -49,9 +51,9 @@ const Contact = () => {
 
           <form onSubmit={handleWhatsAppSend} className="space-y-8 relative z-10">
             <div className="space-y-2">
-              <Input 
-                label="Tu nombre"
-                placeholder="Escribe tu nombre aquí..."
+              <Input
+                label={t.contact.name}
+                placeholder={t.contact.namePlaceholder}
                 required
                 className="bg-transparent border-zinc-800 focus:border-zinc-500 transition-colors text-zinc-100 placeholder:text-zinc-700"
                 value={formData.name}
@@ -60,9 +62,9 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <Input 
-                label="Mensaje"
-                placeholder="¿En qué puedo ayudarte?"
+              <Input
+                label={t.contact.message}
+                placeholder={t.contact.messagePlaceholder}
                 isTextArea
                 required
                 className="bg-transparent border-zinc-800 focus:border-zinc-500 transition-colors text-zinc-100 placeholder:text-zinc-700 min-h-[150px]"
@@ -76,14 +78,14 @@ const Contact = () => {
               className="w-full flex items-center justify-center gap-3 py-6 bg-zinc-100 text-black hover:bg-white transition-all duration-300 font-bold uppercase tracking-widest text-xs rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.05)]"
             >
               <MessageCircle size={18} />
-              Enviar a WhatsApp
+              {t.contact.send}
             </Button>
           </form>
         </motion.div>
 
         {/* Nota al pie minimalista */}
         <p className="text-center mt-12 text-zinc-600 text-xs font-mono tracking-tighter uppercase">
-          Limpio, Paraguay &bull; Disponible para nuevos proyectos
+          {t.contact.location}
         </p>
       </div>
     </section>

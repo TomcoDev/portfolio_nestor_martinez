@@ -1,7 +1,9 @@
 // src/components/layout/Footer.tsx
 import { NAV_LINKS } from '../../constants';
+import { useLang } from '../../i18n';
 
 const Footer = () => {
+  const { t } = useLang();
   return (
     <footer className="pt-16 pb-40 md:py-16 border-t border-zinc-800/50 bg-[#0a0a0a] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -13,19 +15,19 @@ const Footer = () => {
               TOMCO<span className="text-zinc-500">DEV</span>
             </h3>
             <p className="text-zinc-500 text-sm font-light max-w-xs leading-relaxed">
-              Construyendo ecosistemas digitales desde <span className="text-zinc-300">Limpio, Paraguay</span>. Enfocado en el código limpio y la escalabilidad.
+              {t.footer.tagline}
             </p>
           </div>
 
           {/* Lado Derecho: Navegación Técnica */}
           <div className="flex flex-wrap gap-x-10 gap-y-4">
             {NAV_LINKS.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.key}
                 href={link.href}
                 className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 hover:text-zinc-100 transition-colors"
               >
-                {link.name}
+                {t.nav[link.key]}
               </a>
             ))}
           </div>

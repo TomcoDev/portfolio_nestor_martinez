@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { NAV_LINKS, SOCIAL_LINKS } from '../../constants';
 import { useClickOutside } from '../../hooks/useClickOutside';
+import { useLang } from '../../i18n';
+import LangToggle from '../ui/LangToggle';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -13,6 +15,7 @@ interface SidebarProps {
 const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
   useClickOutside(sidebarRef, onClose);
+  const { t } = useLang();
 
   return (
     <AnimatePresence>
@@ -38,20 +41,24 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           >
             {/* Header del Sidebar */}
             <div className="flex items-center justify-between mb-16">
-              <span className="text-xs font-mono tracking-[0.3em] text-zinc-600 uppercase">Menú</span>
-              <button 
-                onClick={onClose}
-                className="p-2 text-zinc-500 hover:text-white transition-colors"
-              >
-                <X size={24} strokeWidth={1.5} />
-              </button>
+              <span className="text-xs font-mono tracking-[0.3em] text-zinc-600 uppercase">{t.sidebar.menu}</span>
+              <div className="flex items-center gap-3">
+                <LangToggle />
+                <button
+                  onClick={onClose}
+                  className="p-2 text-zinc-500 hover:text-white transition-colors"
+                  aria-label="Cerrar menú"
+                >
+                  <X size={24} strokeWidth={1.5} />
+                </button>
+              </div>
             </div>
 
             {/* Links de Navegación: Estilo Minimalista */}
             <nav className="flex flex-col gap-8 mb-auto">
               {NAV_LINKS.map((link, index) => (
                 <motion.a
-                  key={link.name}
+                  key={link.key}
                   href={link.href}
                   onClick={onClose}
                   initial={{ opacity: 0, x: 20 }}
@@ -59,14 +66,14 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                   transition={{ delay: 0.1 * index }}
                   className="text-3xl font-black tracking-tighter text-zinc-500 hover:text-zinc-100 transition-all duration-300"
                 >
-                  {link.name}<span className="text-zinc-800">.</span>
+                  {t.nav[link.key]}<span className="text-zinc-800">.</span>
                 </motion.a>
               ))}
             </nav>
 
             {/* Pie del Sidebar: Redes Sociales Monocromáticas */}
             <div className="pt-10 border-t border-zinc-900 flex flex-col gap-6">
-              <span className="text-[10px] font-mono tracking-widest text-zinc-700 uppercase">Conectar</span>
+              <span className="text-[10px] font-mono tracking-widest text-zinc-700 uppercase">{t.sidebar.connect}</span>
               <div className="flex gap-6">
                 {SOCIAL_LINKS.map((social) => {
                   const Icon = social.icon;

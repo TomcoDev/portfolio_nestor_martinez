@@ -4,8 +4,10 @@ import { PROJECTS } from '../../constants';
 import { Github, ExternalLink, Eye, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import GalleryModal from '../ui/GalleryModal'; // Asegúrate de haber creado este componente
+import { useLang } from '../../i18n';
 
 const Projects = () => {
+  const { t, lang } = useLang();
   // Estado para controlar qué proyecto mostrar en la galería
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
@@ -43,7 +45,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-zinc-100">
-            Proyectos <span className="text-zinc-500">Seleccionados</span>
+            {t.projects.title1} <span className="text-zinc-500">{t.projects.title2}</span>
           </h2>
           <div className="h-1 w-20 bg-zinc-800 mx-auto rounded-full" />
         </motion.div>
@@ -76,7 +78,7 @@ const Projects = () => {
                     {project.gallery && project.gallery.length > 0 && (
                       <div className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-600 mt-1 uppercase tracking-widest">
                         <ImageIcon size={10} />
-                        <span>{project.gallery.length} capturas</span>
+                        <span>{project.gallery.length} {t.projects.captures}</span>
                       </div>
                     )}
                   </div>
@@ -90,7 +92,7 @@ const Projects = () => {
                 </div>
 
                 <p className="text-zinc-500 mb-6 text-sm leading-relaxed font-light flex-grow">
-                  {project.description}
+                  {lang === 'en' && project.description_en ? project.description_en : project.description}
                 </p>
                 
                 {/* Tags */}
@@ -114,7 +116,7 @@ const Projects = () => {
                       onClick={() => setSelectedProject(project)}
                       className="flex items-center gap-2 px-5 py-2.5 bg-zinc-100 text-black hover:bg-white rounded-xl transition-all text-[11px] font-bold uppercase tracking-widest shadow-lg"
                     >
-                      <Eye size={14} /> Visualizar
+                      <Eye size={14} /> {t.projects.view}
                     </button>
                   )}
 
@@ -126,7 +128,7 @@ const Projects = () => {
                       rel="noreferrer"
                       className="flex items-center gap-2 px-5 py-2.5 border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-500 rounded-xl transition-all text-[11px] font-bold uppercase tracking-widest"
                     >
-                      <Github size={14} /> Código
+                      <Github size={14} /> {t.projects.code}
                     </a>
                   )}
                 </div>

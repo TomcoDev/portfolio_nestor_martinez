@@ -1,12 +1,14 @@
 // src/components/layout/WhatsAppFab.tsx
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useLang } from '../../i18n';
 
 // Mismo numero que el resto del sitio
 const WHATSAPP_PHONE = '595991682966';
 const MESSAGE = 'Hola Néstor, vi tu portafolio y me gustaría consultarte sobre un proyecto.';
 
 const WhatsAppFab = () => {
+  const { t } = useLang();
   const href = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(MESSAGE)}`;
 
   return (
@@ -14,7 +16,7 @@ const WhatsAppFab = () => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      aria-label="Escríbeme por WhatsApp"
+      aria-label={t.fab.aria}
       initial={{ opacity: 0, scale: 0, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ delay: 1.2, type: 'spring', stiffness: 260, damping: 18 }}
@@ -28,7 +30,7 @@ const WhatsAppFab = () => {
                    opacity-0 translate-x-2 pointer-events-none transition-all duration-300
                    group-hover:opacity-100 group-hover:translate-x-0"
       >
-        ¿Hablamos? 👋
+        {t.fab.tooltip}
       </span>
 
       {/* Boton verde */}
