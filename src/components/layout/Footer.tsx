@@ -3,7 +3,7 @@ import { NAV_LINKS } from '../../constants';
 
 const Footer = () => {
   return (
-    <footer className="py-16 border-t border-zinc-800/50 bg-[#0a0a0a] relative overflow-hidden">
+    <footer className="pt-16 pb-40 md:py-16 border-t border-zinc-800/50 bg-[#0a0a0a] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           
