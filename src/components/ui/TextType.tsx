@@ -59,7 +59,7 @@ const TextType = ({
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const cursorRef = useRef<HTMLSpanElement>(null);
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
 
@@ -183,7 +183,7 @@ const TextType = ({
 
   return (
     <Tag
-      ref={containerRef as any}
+      ref={containerRef}
       className={`inline-block whitespace-pre-wrap tracking-tight ${className}`}
       {...props}
     >

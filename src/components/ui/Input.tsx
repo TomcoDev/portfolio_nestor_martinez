@@ -17,7 +17,7 @@ export const Input = ({ label, className, isTextArea, ...props }: InputProps) =>
           isTextArea && "min-h-[120px] resize-none",
           className
         )}
-        {...props as any}
+        {...(props as React.InputHTMLAttributes<HTMLInputElement> & React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
       />
     </div>
   );

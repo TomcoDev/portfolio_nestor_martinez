@@ -3,10 +3,9 @@ import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
 /**
- * Usamos 'any' en el RefObject para evitar conflictos de varianza 
- * entre diferentes tipos de elementos HTML (div, section, etc.) durante el build.
+ * Genérico sobre el tipo de elemento para aceptar refs de div, section, etc.
  */
-export const useClickOutside = (ref: RefObject<any>, handler: () => void) => {
+export const useClickOutside = <T extends HTMLElement>(ref: RefObject<T | null>, handler: () => void) => {
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
       // Si la referencia no existe o si el clic fue dentro del elemento, no hacemos nada

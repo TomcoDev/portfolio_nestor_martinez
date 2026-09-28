@@ -18,8 +18,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    # El código tiene errores de lint previos: se reportan sin bloquear el deploy.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -43,7 +41,7 @@ jobs:
 
   deploy:
     name: Deploy a Coolify
-    needs: build
+    needs: [lint, build]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:

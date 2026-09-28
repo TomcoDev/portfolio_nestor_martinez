@@ -5,11 +5,12 @@ import { Github, ExternalLink, Eye, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import GalleryModal from '../ui/GalleryModal'; // Asegúrate de haber creado este componente
 import { useLang } from '../../i18n';
+import type { Project } from '../../types';
 
 const Projects = () => {
   const { t, lang } = useLang();
   // Estado para controlar qué proyecto mostrar en la galería
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },

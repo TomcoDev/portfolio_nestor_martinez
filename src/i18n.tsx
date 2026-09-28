@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 export type Lang = 'es' | 'en';
 
 // Diccionario de traducciones (ES / EN)
-export const translations = {
+const translations = {
   es: {
     nav: {
       inicio: 'Inicio',
