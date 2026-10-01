@@ -22,7 +22,8 @@ const WhatsAppFab = () => {
       transition={{ delay: 1.2, type: 'spring', stiffness: 260, damping: 18 }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.94 }}
-      className="group fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 flex items-center gap-3"
+      // En mobile el Dock ocupa el centro inferior y llega hasta la esquina, asi que el boton va por encima de el
+      className="group fixed bottom-28 right-4 md:bottom-6 md:right-6 z-50 flex items-center gap-3"
     >
       {/* Tooltip (solo desktop, aparece en hover) */}
       <span
